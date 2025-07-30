@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+  <title>DRIP APPAREL</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div id="login-page" class="centered">
+    <h2>DRIP APPAREL - LOGIN</h2>
+    <input type="text" id="login-username" placeholder="Username" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p><a href="#" onclick="alert('Reset link sent to email (mock).')">Forgot Password?</a></p>
+  </div>
+
+  <!-- Main Shop Page -->
+  <div id="shop-page" style="display: none;">
+    <header>
+      <h1>Welcome to DRIP APPAREL</h1>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section id="catalogue">
+      <h2>CATALOGUE</h2>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section id="cart">
+      <h2>Cart</h2>
+      <ul id="cart-list"></ul>
+      <p>Total: R<span id="total">0</span></p>
+      <button onclick="openPayment()">Checkout</button>
+      <button onclick="clearCart()">Clear Cart</button>
+    </section>
+  </div>
+
+  <!-- Payment Modal -->
+  <div id="payment-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closePayment()">&times;</span>
+      <h3>Payment</h3>
+      <input type="text" id="card-name" placeholder="Name on Card" />
+      <input type="number" id="card-number" placeholder="Card Number" maxlength = "16" />
+      <input type="number" id="cvv" placeholder="CVV" maxlength = "3"/>
+      <button onclick="pay()">Pay R<span id="pay-amount">0</span></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
